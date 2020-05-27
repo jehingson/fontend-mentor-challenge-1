@@ -1,28 +1,30 @@
 .hero{
     text-align: center;
     padding-bottom: 5em;
+    margin-top: 4em;
     background: var(--lightGray);
     .copy{
         margin-bottom: 2.5em;
     }
     &_imagen{
         height: 300px;
-        margin: 0 calc(-1*var(--wrapperSpace));
-        background: url('../images/image-mockups.png') center bottom no-repeat, url('../images/bg-intro-mobile.svg') center no-repeat ;
-        background-size: 345px, cover;
+        margin: 0 -3em;
+        background: url('../images/image-mockups.png') center bottom no-repeat, url('../images/bg-intro-mobile.svg') center no-repeat;
+        background-size: 320px, cover;
         margin-bottom: 1.2em;
+      }
+    &__imagenSrc{
+        display: none;
     }
-    
     @media screen and (min-width: 768px){
         text-align: left;
-        background: url('../images/bg-intro-desktop.svg') left 640px top -290px no-repeat ;
+        background: url('../images/bg-intro-desktop.svg') left 400px top -150px no-repeat ;
         background-size: cover;
         min-height: 550px;
         box-sizing: border-box;
         
         &__content{
             position: relative;
-            border: 1px solid red;
             display: grid;
             align-items: center;
             min-height: 550px;
@@ -30,31 +32,35 @@
             grid-template-columns: 480px 1fr;
         }
         &__description{
-            border: 1px solid green;
         }
         &_imagen{
             grid-area: imagen;
             min-height: inherit;
             position: absolute;
-            border: 1px solid rebeccapurple;
-            width: 730px;
-            height: 768px;
+            width: 700px;
+            height: 700px;
             top: 0;
             left: 0;
-            background: url('../images/image-mockups.png')right -100px bottom no-repeat;
+            background: url('../images/image-mockups.png')right -10px bottom no-repeat;
             background-size: cover; 
         }
 }
-
     @media screen and (min-width: 1024px){
         //background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat ;
+        &__content{
+        }
+        &__imagenSrc{
+            display: block;
+            position: relative;
+            top: -150px;
+        }
         &_imagen{
-        background: url('../images/image-mockups.png') right bottom no-repeat;
-        background-size: 100%;
+        //background: url('../images/image-mockups.png') right bottom no-repeat;
+        background: none;
+       // background-size: 100%;
         right: 150px;
         left: 0px;
         top: 0;
        }
     }
-   
 }
