@@ -2,6 +2,7 @@
 @import "./hero.scss";
 @import "./why.scss";
 @import "./lastestArticles.scss";
+@import "./footer.scss";
 
 :root{
     --darkBlue: hsl(233, 26%, 24%);
@@ -31,21 +32,34 @@ body {
 .wrapper{
     padding:  0 1.5em;
 }
+@mixin  title {
+    font-size: 2.5em;
+    color: var(--darkBlue);
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 0;
+    margin-bottom: .5em;
+}
 .title{
     
     &_h1{
-        font-size: 2.5em;
-        color: var(--darkBlue);
-        font-weight: 300;
-        line-height: 1.3;
-        margin: 0;
-        margin-bottom: .5em;
+        @include title;
+        //  font-size: 2.5em;
+        //  color: var(--darkBlue);
+        //  font-weight: 300;
+        //  line-height: 1.3;
+        //  margin: 0;
+        //  margin-bottom: .5em;
     }&_h2{
-        @extend .title_h1;
+        @include title;
         font-size: 1.5em;
+    }&_h3{
+        @include title;
+        font-size: 1em;
     }
 }
 .button{
+    border: none;
     padding: .9em 2.2em;
     border-radius: 1.5rem;
     font-size: 1em;
@@ -53,3 +67,31 @@ body {
     background-image: linear-gradient(to right,var(--limeGren) 0%, var(--rigthcyan) 100%);
 }
 
+@mixin icon{
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    background-repeat: no-repeat;
+}
+.icon{
+    &_facebook{
+        @include icon;
+        background-image: url('../images/icon-facebook.svg');
+    }
+    &_youtube{
+        @include icon;
+        background-image: url('../images/icon-youtube.svg');
+    }
+    &_twitter{
+        @include icon;
+        background-image: url('../images/icon-twitter.svg');
+    }
+    &_pinterest{
+        @include icon;
+        background-image: url('../images/icon-pinterest.svg');
+    }
+    &_instagram{
+        @include icon;
+        background-image: url('../images/icon-instagram.svg');
+    }
+}
