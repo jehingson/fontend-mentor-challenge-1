@@ -2,6 +2,7 @@
     display: flex;
     padding: 1em 0;
     justify-content: space-between;
+    position: relative;
     &__logo{
         align-self: center;
     }
@@ -27,10 +28,57 @@
 .menu{
     display: none;
     list-style: none;
+    padding: 0;
+    margin: 0;
     &__button{
         width: 40px;
         height: 40px;
         background: url('../images/icon-hamburger.svg') no-repeat center;
+    }
+    a{
+        text-decoration: none;
+        color: var(--grayBlue);
+        padding: 0 .8em;
+    }
+   
+    &__checkbox{
+        display: none;
+        &:checked{
+            & ~ .menu__button{
+                background: url('../images/icon-close.svg') no-repeat center;
+            }
+            & ~ .menu {
+                display: block;
+                position: absolute;
+                top: 100%;
+                padding: 1em;
+                background: rgb(241, 42, 42);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 100vh;
+                background: linear-gradient(to bottom, var(--darkBlue) 0%, transparent 90%);
+                .menu__item{
+                    &:first-of-type a{
+                        padding-top: 2em;
+                        border-radius: .5em .5em 0 0;
+                    }
+                    &:last-of-type a{
+                        padding-bottom: 2em;
+                        border-radius: 0 0 .5em .5em;
+                    }
+                }
+                a{  
+                    background: white;
+                    padding: .8em 1em;
+                    color: var(--darkBlue);
+                    font-size: 1.1em;
+                    display: block;
+                    text-align: center;
+
+                }
+            }
+        }
     }
     a{
         text-decoration: none;

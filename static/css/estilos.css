@@ -2,6 +2,7 @@
   display: flex;
   padding: 1em 0;
   justify-content: space-between;
+  position: relative;
 }
 .header__logo {
   align-self: center;
@@ -27,11 +28,52 @@
 .menu {
   display: none;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .menu__button {
   width: 40px;
   height: 40px;
   background: url("../images/icon-hamburger.svg") no-repeat center;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--grayBlue);
+  padding: 0 0.8em;
+}
+.menu__checkbox {
+  display: none;
+}
+.menu__checkbox:checked ~ .menu__button {
+  background: url("../images/icon-close.svg") no-repeat center;
+}
+.menu__checkbox:checked ~ .menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  padding: 1em;
+  background: #f12a2a;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, var(--darkBlue) 0%, transparent 90%);
+}
+.menu__checkbox:checked ~ .menu .menu__item:first-of-type a {
+  padding-top: 2em;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.menu__checkbox:checked ~ .menu .menu__item:last-of-type a {
+  padding-bottom: 2em;
+  border-radius: 0 0 0.5em 0.5em;
+}
+.menu__checkbox:checked ~ .menu a {
+  background: white;
+  padding: 0.8em 1em;
+  color: var(--darkBlue);
+  font-size: 1.1em;
+  display: block;
+  text-align: center;
 }
 .menu a {
   text-decoration: none;
@@ -270,15 +312,10 @@ body {
   font-size: 0.9em;
 }
 
-.is-hidden {
-  display: none;
-}
-
 .wrapper {
-  padding: 0 1.5em;
   max-width: 1115px;
   margin: auto;
-  width: 100%;
+  width: 90%;
 }
 
 .title_h1 {
