@@ -3,6 +3,7 @@
     background: var(--lightGray);
     .title_h1{
         text-align: center;
+        margin-bottom: 1em;
     }
   //  .title_h3{
    //     text-align: left;
@@ -17,7 +18,7 @@
     overflow: hidden;
     background: var(--white);
     &_content{
-        padding: 1.8em;
+        padding: 1em;
     }
     .copy{
         color: var(--grayBlue);
@@ -31,5 +32,25 @@
 img{
     width: 100%;
     object-fit: cover;
+}
+@media screen and (min-width: 768px){
+    .title_h1{
+        text-align: left;
+    }
+    &_item{
+        &_content{
+            padding: 1em;
+        }
+    }
+    &_grid{
+        display: grid;
+        grid-column-gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1024px){
+    &_grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 }

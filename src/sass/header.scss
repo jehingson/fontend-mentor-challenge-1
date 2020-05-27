@@ -1,9 +1,46 @@
 .header{
     display: flex;
-    padding: 1em 1.5em;
+    padding: 1em 0;
     justify-content: space-between;
+    &__logo{
+        align-self: center;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+    .button{
+        display: none;
+    }
+    @media screen  and (min-width: 1024px){
+        .button{
+            display: inline;
+        }
+        &__content{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
+
 .menu{
-    width: 40px;
-    background: url('../images/icon-hamburger.svg') no-repeat center;
+    display: none;
+    list-style: none;
+    &__button{
+        width: 40px;
+        height: 40px;
+        background: url('../images/icon-hamburger.svg') no-repeat center;
+    }
+    a{
+        text-decoration: none;
+        color: var(--grayBlue);
+        padding: 0 .8em;
+    }
+    @media screen and (min-width: 1024px){
+        display: flex;
+        &__button{
+            display: none;
+        }
+    }
 }
